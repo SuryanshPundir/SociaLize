@@ -1,6 +1,6 @@
 import Register from './pages/register/Register';
 import Login from './pages/login/Login';
-import './App.css'
+import './App.scss'
 import {
   createBrowserRouter,
   Outlet,
@@ -21,7 +21,9 @@ function App() {
         <NavBar />
         <div style={{ display: "flex" }}>
           <LeftBar />
-          <Outlet />
+          <div style={{ flex: 6 }}>
+            <Outlet />
+          </div>
           <RightBar />
         </div>
       </div>
