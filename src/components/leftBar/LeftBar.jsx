@@ -12,19 +12,24 @@ import Messages from "../../assets/10.png";
 import Tutorials from "../../assets/11.png";
 import Courses from "../../assets/12.png";
 import Fund from "../../assets/13.png";
+import { AuthContext } from "../../context/authContext";
+import { useContext } from "react";
+
 const LeftBar = () => {
+
+  const { currentUser } = useContext(AuthContext);
+
   return (
     <div className="leftBar">
       <div className="container">
         <div className="menu">
           <div className="user">
             <img
-              src="https://images.pexels.com/photos/1526814/pexels-photo-1526814.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+              src={currentUser.profilePic}
               alt=""
             />
-            <span>Jen Kazama</span>
+            <span>{currentUser.name}</span>
           </div>
-
           <div className="item">
             <img src={Friends} alt="" />
             <span>Friends</span>
@@ -85,26 +90,10 @@ const LeftBar = () => {
             <img src={Courses} alt="" />
             <span>Courses</span>
           </div>
-          <div className="item">
-            <img src={Courses} alt="" />
-            <span>Courses</span>
-          </div>
-          <div className="item">
-            <img src={Courses} alt="" />
-            <span>Courses</span>
-          </div>
-          <div className="item">
-            <img src={Courses} alt="" />
-            <span>Courses</span>
-          </div>
-          <div className="item">
-            <img src={Courses} alt="" />
-            <span>Courses</span>
-          </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default LeftBar
+export default LeftBar;
